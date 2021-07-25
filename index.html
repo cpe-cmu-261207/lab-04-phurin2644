@@ -7,13 +7,64 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src='script.js' defer></script>
 	<title>Lab 04</title>
-	<!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<style>
+		.cover-1{
+		  background-size:contain;
+		}
+		body{
+		  background: #FFE194;
+		}
+		.bg-mint{
+		  background: #E8F6EF;
+		}
+		.bg-mint-200{
+		  background: #cdecdd;
+		}
+		.bg-mint-100{
+		  background: #B8DFD8;
+		}
+		.bg-ppg{
+		  background: #4C4C6D;
+		}
+		*{
+		  font-family: 'Otomanopee One', sans-serif;
+		  list-style: none;
+		}
+	   
+	  </style>
 </head>
 
 <body>
-	<h1>Minimal Todo List</h1>
-	<input  type='text'>
-	<button>+</button>
+	<div class="max-w-screen-xl bg-mint mx-auto my-10 rounded-xl shadow-md rounded-t-3xl">
+		<!--task-->
+		<div class="flex py-4 bg-ppg px-4 rounded-t-3xl shadow-md">
+			<div class="flex space-x-2 ml-4">
+			  <h6 class="text-5xl text-red-500 ">Minimal</h6>
+			  <h6 class="text-3xl text-gray-100">Todo List</h6>
+			</div>
+		</div>
+		<!--content-->
+		<div class="flex space-x-10">
+			<!--input-->
+		<div>
+			<input " type='text' class=" p-2 px-6 rounded-xl shadow-md" oninput="Enter(event)">
+			<button id = "add" class=" p-2 px-6 rounded-xl bg-red-100 hover:bg-red-100 hover:text-red-500 transform hover:scale-110 shadow-md" onclick="addinput(0)">+</button>
+			<button class=" p-2 px-6 rounded-xl bg-red-100 hover:bg-red-100 hover:text-red-500 transform hover:scale-110 shadow-md" onclick="clearall(0)">clear all</button>
+		</div>
+		<!--show-->
+		<div id = "list">
+			
+		</div>
+		<div id = "coms">
+
+		</div>
+		</div>
+		
+	   
+	</div>
+	
 </body>
 
 </html>
