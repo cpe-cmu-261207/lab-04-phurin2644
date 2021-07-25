@@ -5,6 +5,7 @@ const input = document.querySelector('input')
 const add = document.querySelector('#add')
 const coms = document.querySelector('#coms')
 const list = document.querySelector('#list')
+const local = []
 
 const addinput = () => {
     if (input.value == "") {
@@ -14,6 +15,8 @@ const addinput = () => {
         const btn = document.createElement('button')
         btn.setAttribute('class', 'bg-green-100')
         btn.innerHTML = "Done"
+        local.push(input.value)
+        localStorage.setItem("lastname", JSON.stringify(local))
         btn.addEventListener("click", function(event){
             h1.style.textDecoration = "line-through"
             h1.remove()
@@ -25,6 +28,8 @@ const addinput = () => {
         btnDel.innerHTML = "Delete"
         btnDel.addEventListener("click", function(event){
             h1.remove()
+            local.splice(local.findIndex(x => x == h1.innerText)-1, 1)
+            localStorage.setItem("lastname", JSON.stringify(local))
         })
         const h1 = document.createElement('h1')
         h1.innerHTML = input.value
